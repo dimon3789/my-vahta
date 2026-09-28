@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр Найма - Актуальные Вакансии и Работа Вахтой</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+                        <i class="fa-solid fa-briefcase text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-white block">РАБОТА<span class="text-brand-500"> ВАХТОЙ</span></span>
+                        <span class="text-xs text-slate-400 font-medium">Прямой работодатель & Работа в РФ</span>
+                    </div>
+                </div>
+
+                <!-- Contact & Admin Toggle -->
+                <div class="flex items-center space-x-3 sm:space-x-6">
+                    <!-- Call Button -->
+                    <a href="tel:89605076620" class="hidden md:flex items-center space-x-2 text-slate-200 hover:text-white transition font-semibold group">
+                        <div class="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-600 transition">
+                            <i class="fa-solid fa-phone text-brand-500 group-hover:text-white text-sm"></i>
+                        </div>
+                        <span class="text-lg tracking-wide whitespace-nowrap">8 (960) 507-66-20</span>
+                    </a>
+
+                    <!-- Fast Contact Action -->
+                    <a href="https://wa.me/79605076620?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8." target="_blank" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/20 space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Написать в WhatsApp</span>
+                    </a>
+
+                    <!-- Admin Switch Toggle Button -->
+                    <button id="adminToggleBtn" onclick="toggleAdminPanel()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-300 hover:text-white transition flex items-center space-x-2">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span id="adminBtnText">Панель Управления</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-b border-slate-800 py-12 lg:py-16 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-500 text-xs font-bold uppercase tracking-wider mb-4">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    Набор сотрудников открыт 2026
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
+                    Срочные вакансии с проживанием и питанием
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+                    Официальное трудоустройство по ТК РФ, бесплатное проживание, питание и компенсация проезда до 5 000 руб. Выберите вакансию и оставьте отклик за 30 секунд!
+                </p>
+
+                <!-- Phone CTA card for Mobile -->
+                <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-slate-800/80 border border-slate-700 p-3 sm:p-2 rounded-2xl max-w-md mx-auto w-full">
+                    <a href="tel:89605076620" class="w-full sm:w-auto px-4 sm:px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm sm:text-base flex items-center justify-center space-x-2 transition shadow-lg shadow-brand-600/30 whitespace-nowrap">
+                        <i class="fa-solid fa-phone-volume shrink-0"></i>
+                        <span class="whitespace-nowrap">8 (960) 507-66-20</span>
+                    </a>
+                    <span class="text-xs text-slate-400 px-2 font-medium text-center sm:text-left">Отдел кадров / Звонок бесплатный</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Candidate View (Default) -->
+        <div id="candidateView">
+            
+            <!-- Filter & Search Bar -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 sm:p-6 mb-8 shadow-xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Search Input -->
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                        <input type="text" id="searchInput" oninput="filterVacancies()" placeholder="Поиск (город, должность)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition">
+                    </div>
+
+                    <!-- City Filter -->
+                    <div>
+                        <select id="cityFilter" onchange="filterVacancies()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:outline-none focus:border-brand-500 text-sm transition">
+                            <option value="ALL">Все города / РЦ</option>
+                            <option value="Москва (Внуково)">г. Москва (РЦ Внуково)</option>
+                            <option value="Санкт-Петербург">г. Санкт-Петербург (РЦ Шушары)</option>
+                            <option value="Подмосковье (Всходы)">Подмосковье (РЦ Всходы)</option>
+                            <option value="Подмосковье (Северный)">Подмосковье (РЦ Северный)</option>
+                            <option value="Ногинск">г. Ногинск</option>
+                            <option value="Наро-Фоминск">г. Наро-Фоминск</option>
+                            <option value="Коломна">г. Коломна</option>
+                            <option value="Электроугли">г. Электроугли</option>
+                            <option value="Новосибирск">г. Новосибирск</option>
+                        </select>
+                    </div>
+
+                    <!-- Specialty / Role Filter -->
+                    <div>
+                        <select id="roleFilter" onchange="filterVacancies()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:outline-none focus:border-brand-500 text-sm transition">
+                            <option value="ALL">Все специальности</option>
+                            <option value="Комплектовщик">Комплектовщик / Упаковщик</option>
+                            <option value="Водитель">Водитель погрузчика / Штабелера</option>
+                            <option value="Уборщик">Уборщица / Клининг</option>
+                            <option value="Транспортировщик">Транспортировщик</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort -->
+                    <div>
+                        <select id="sortFilter" onchange="filterVacancies()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:outline-none focus:border-brand-500 text-sm transition">
+                            <option value="DEFAULT">Сначала рекомендуемые</option>
+                            <option value="PAY_HIGH">Сначала высокая ставка</option>
+                            <option value="PAY_LOW">Сначала низкая ставка</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Statistics counter -->
+                <div class="mt-4 pt-4 border-t border-slate-700/60 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+                    <div id="vacancyCountBadge" class="font-medium text-slate-300">
+                        Найдено вакансий: <span id="vacancyCount" class="text-brand-500 font-bold">0</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-house text-emerald-400"></i> Проживание</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-utensils text-amber-400"></i> Питание</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-bus text-blue-400"></i> Компенсация проезда</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Cards Grid -->
+            <div id="vacanciesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically Rendered via JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden text-center py-16 bg-slate-800/40 border border-slate-800 rounded-2xl">
+                <i class="fa-solid fa-folder-open text-5xl text-slate-600 mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-300 mb-1">Вакансий не найдено</h3>
+                <p class="text-slate-500 text-sm">Попробуйте изменить параметры поиска или фильтрации</p>
+                <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-xs font-semibold text-white transition">
+                    Сбросить фильтры
+                </button>
+            </div>
+        </div>
+
+        <!-- Admin Panel View (Hidden by default) -->
+        <div id="adminView" class="hidden space-y-8">
+            <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                <div>
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-brand-500"></i> Панель Управления Вакансиями и Откликами
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Управление размещенными объектами и просмотр контактов кандидатов</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="openAddVacancyModal()" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition flex items-center space-x-2">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Добавить вакансию</span>
+                    </button>
+                    <button onclick="exportApplicationsToCSV()" class="px-4 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-sm font-semibold transition flex items-center space-x-2">
+                        <i class="fa-solid fa-file-csv"></i>
+                        <span>Экспорт откликов</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabs inside Admin -->
+            <div class="flex border-b border-slate-700 space-x-4">
+                <button id="adminTabApplications" onclick="switchAdminTab('applications')" class="pb-3 text-sm font-bold border-b-2 border-brand-500 text-brand-500 transition">
+                    Отклики кандидатов (<span id="appCount">0</span>)
+                </button>
+                <button id="adminTabManage" onclick="switchAdminTab('manage')" class="pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+                    Все Вакансии (<span id="adminJobCount">0</span>)
+                </button>
+            </div>
+
+            <!-- Admin Applications Table -->
+            <div id="adminApplicationsSection" class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-900/80 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-700">
+                            <tr>
+                                <th class="p-4">Дата</th>
+                                <th class="p-4">ФИО Кандидата</th>
+                                <th class="p-4">Телефон</th>
+                                <th class="p-4">Вакансия / Объект</th>
+                                <th class="p-4">Комментарий</th>
+                                <th class="p-4 text-right">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsTableBody" class="divide-y divide-slate-700/60">
+                            <!-- JS Populated -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="emptyApplications" class="hidden text-center py-12 text-slate-500">
+                    Откликов пока нет. Новые заявки кандидатов будут отображаться здесь.
+                </div>
+            </div>
+
+            <!-- Admin Manage Jobs List -->
+            <div id="adminManageJobsSection" class="hidden space-y-4">
+                <div id="adminJobsContainer" class="space-y-4">
+                    <!-- JS Populated -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 mt-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-bold text-slate-200">Центр Трудоустройства & Вахтовый Метод</p>
+                <p class="text-xs text-slate-500 mt-1">Официальные вакансии на складах и заводах РФ</p>
+            </div>
+            <div class="flex items-center space-x-6 text-xs">
+                <a href="tel:89605076620" class="hover:text-brand-500 font-bold text-slate-300 transition whitespace-nowrap">
+                    <i class="fa-solid fa-phone mr-1"></i> 8 (960) 507-66-20
+                </a>
+                <span>Пн-Вс: 08:00 - 20:00</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- APPLICATION MODAL -->
+    <div id="applyModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl relative my-8">
+            <!-- Modal Header -->
+            <div class="bg-slate-800/80 p-5 border-b border-slate-700 flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-white">Отклик на вакансию</h3>
+                    <p id="applyModalJobTitle" class="text-xs text-brand-500 font-semibold mt-0.5">Название вакансии</p>
+                </div>
+                <button onclick="closeApplyModal()" class="w-8 h-8 rounded-full bg-slate-700/60 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <form id="applyForm" onsubmit="handleApplySubmit(event)" class="p-6 space-y-4">
+                <input type="hidden" id="modalJobId">
+                <input type="hidden" id="modalJobTitleInput">
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Ваше ФИО <span class="text-rose-500">*</span></label>
+                    <input type="text" id="candidateName" required placeholder="Например: Иванов Иван Иванович" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Телефон для связи <span class="text-rose-500">*</span></label>
+                    <input type="tel" id="candidatePhone" required placeholder="+7 (999) 000-00-00" onfocus="handlePhoneFocus(this)" onblur="handlePhoneBlur(this)" oninput="handlePhoneInput(this)" class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Комментарий или дата готовности (необязательно)</label>
+                    <textarea id="candidateComment" rows="3" placeholder="Укажите, когда готовы приступить к работе..." class="w-full px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm"></textarea>
+                </div>
+
+                <div class="bg-slate-800/50 p-3.5 rounded-xl border border-slate-700/60 text-xs text-slate-400 space-y-1">
+                    <p class="font-medium text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-check text-brand-500"></i> Прямое трудоустройство
+                    </p>
+                    <p>Телефон отдела кадров: <strong class="text-white whitespace-nowrap">8 (960) 507-66-20</strong></p>
+                </div>
+
+                <div class="pt-2 flex flex-col gap-2">
+                    <button type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition shadow-lg shadow-brand-600/25 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Отправить отклик</span>
+                    </button>
+                    <button type="button" onclick="sendViaWhatsAppDirect()" class="w-full py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>Быстрый отклик через WhatsApp</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JOB DETAILS MODAL -->
+    <div id="jobDetailsModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl relative my-8 max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div id="jobDetailsHeader" class="bg-slate-800 p-6 border-b border-slate-700 flex items-start justify-between">
+                <div>
+                    <span id="detailCompanyBadge" class="inline-block px-2.5 py-1 rounded-md bg-brand-500/10 text-brand-400 text-xs font-bold uppercase tracking-wider mb-2"></span>
+                    <h3 id="detailTitle" class="text-xl font-bold text-white"></h3>
+                    <p id="detailLocation" class="text-xs text-slate-400 mt-1 flex items-center gap-1.5"></p>
+                </div>
+                <button onclick="closeJobDetailsModal()" class="w-8 h-8 rounded-full bg-slate-700/60 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-6 flex-grow">
+                <!-- Salary highlight -->
+                <div class="bg-slate-800/80 border border-brand-500/30 p-4 rounded-xl flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400 block font-medium">Оплата за смену</span>
+                        <span id="detailSalary" class="text-2xl font-black text-brand-500"></span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">Вахта / График</span>
+                        <span id="detailShift" class="text-sm font-bold text-white"></span>
+                    </div>
+                </div>
+
+                <!-- Perks list -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Предоставляем сотрудникам</h4>
+                    <div id="detailPerks" class="grid grid-cols-2 gap-2 text-xs"></div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Описание и Обязанности</h4>
+                    <div id="detailDescription" class="text-sm text-slate-300 leading-relaxed space-y-2 whitespace-pre-line"></div>
+                </div>
+
+                <!-- Contact Call card -->
+                <div class="bg-slate-800/60 border border-slate-700 p-4 rounded-xl flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-slate-400">Прямой телефон менеджера:</p>
+                        <p class="text-base font-bold text-white whitespace-nowrap">8 (960) 507-66-20</p>
+                    </div>
+                    <a href="tel:89605076620" class="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold transition">
+                        Позвонить
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modal Footer CTA -->
+            <div class="p-4 bg-slate-800/80 border-t border-slate-700 flex items-center justify-end space-x-3">
+                <button onclick="closeJobDetailsModal()" class="px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold hover:text-white transition">
+                    Закрыть
+                </button>
+                <button id="detailApplyBtn" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition shadow-lg shadow-brand-600/30">
+                    Откликнуться
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD/EDIT VACANCY MODAL (ADMIN) -->
+    <div id="adminJobModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl relative my-8">
+            <div class="bg-slate-800 p-5 border-b border-slate-700 flex items-center justify-between">
+                <h3 id="adminJobModalTitle" class="text-lg font-bold text-white">Добавить вакансию</h3>
+                <button onclick="closeAdminJobModal()" class="w-8 h-8 rounded-full bg-slate-700/60 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <form id="adminJobForm" onsubmit="handleSaveAdminJob(event)" class="p-6 space-y-4 max-h-[80vh] overflow-y-auto custom-scrollbar">
+                <input type="hidden" id="adminJobId">
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Компания / Объект</label>
+                    <input type="text" id="adminJobCompany" required placeholder="Например: Детский Мир, Новаролл, Henkel" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Должность / Вакансия</label>
+                    <input type="text" id="adminJobTitle" required placeholder="Например: Комплектовщик" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Город / Населенный пункт</label>
+                        <input type="text" id="adminJobCity" required placeholder="Например: Наро-Фоминск" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ставка за смену (руб)</label>
+                        <input type="text" id="adminJobSalary" required placeholder="Например: 4 800 - 7 000 руб." class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Вахта</label>
+                        <input type="text" id="adminJobShift" placeholder="Например: Вахта 15/15 или 21/21" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">График работы</label>
+                        <input type="text" id="adminJobSchedule" placeholder="Например: График 6/1 или 7/0 по 12ч" class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Подробное описание & Обязанности</label>
+                    <textarea id="adminJobDescription" rows="4" placeholder="Сбор заказов с ТСД, официальное трудоустройство..." class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Ссылка на баннер / изображение (опционально)</label>
+                    <input type="text" id="adminJobImage" placeholder="https://..." class="w-full px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm">
+                </div>
+
+                <div class="pt-2 flex justify-end space-x-3">
+                    <button type="button" onclick="closeAdminJobModal()" class="px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold">Отмена</button>
+                    <button type="submit" class="px-6 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 ease-out bg-slate-800 border border-slate-700 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center space-x-3">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-brand-500 text-xl"></i>
+        <span id="toastMessage" class="text-sm font-medium"></span>
+    </div>
+
+
+    <script>
+        // Initial Vacancy Data from User's Images & Requests
+        const INITIAL_VACANCIES = [
+            {
+                id: "vac-dixi-1",
+                company: "Дикси",
+                title: "Комплектовщик на склад (РЦ Внуково)",
+                city: "Москва (Внуково)",
+                locationDetails: "г. Москва, Новая Москва, РЦ Внуково",
+                salary: "от 80 000 руб / 15 смен",
+                numericSalary: 80000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Бесплатное проживание", "Питание", "Выплаты 15 и 30 числа", "По ТК РФ"],
+                description: `На распределительный центр «Дикси» (РЦ Внуково) требуются комплектовщики.\n\nУсловия работы:\n• Вахта 15/15, график 7/0, смены по 12 часов.\n• Оклад за 1-ю (учебную) вахту: 80 000 руб. (до вычета налога).\n• Выплаты 2 раза в месяц (15 и 30 числа).\n• Со 2-й вахты: оклад 40 000 руб. плюс премия по сделке (в среднем выходит от 80 000 руб. за 15 смен и выше).\n• Бесплатное проживание и питание.\n• Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-dixi-2",
+                company: "Дикси",
+                title: "Комплектовщик на склад (РЦ Всходы)",
+                city: "Подмосковье (Всходы)",
+                locationDetails: "Московская обл., РЦ Всходы",
+                salary: "от 80 000 руб / 15 смен",
+                numericSalary: 80000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Бесплатное проживание", "Питание", "Выплаты 15 и 30 числа", "По ТК РФ"],
+                description: `На распределительный центр «Дикси» (РЦ Всходы) требуются комплектовщики.\n\nУсловия работы:\n• Вахта 15/15, график 7/0, смены по 12 часов.\n• Оклад за 1-ю (учебную) вахту: 80 000 руб. (до вычета налога).\n• Выплаты 2 раза в месяц (15 и 30 числа).\n• Со 2-й вахты: оклад 40 000 руб. плюс премия по сделке (в среднем выходит от 80 000 руб. за 15 смен и выше).\n• Бесплатное проживание и питание.\n• Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-dixi-3",
+                company: "Дикси",
+                title: "Комплектовщик на склад (РЦ Северный)",
+                city: "Подмосковье (Северный)",
+                locationDetails: "Московская обл., РЦ Северный",
+                salary: "от 80 000 руб / 15 смен",
+                numericSalary: 80000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Бесплатное проживание", "Питание", "Выплаты 15 и 30 числа", "По ТК РФ"],
+                description: `На распределительный центр «Дикси» (РЦ Северный) требуются комплектовщики.\n\nУсловия работы:\n• Вахта 15/15, график 7/0, смены по 12 часов.\n• Оклад за 1-ю (учебную) вахту: 80 000 руб. (до вычета налога).\n• Выплаты 2 раза в месяц (15 и 30 числа).\n• Со 2-й вахты: оклад 40 000 руб. плюс премия по сделке (в среднем выходит от 80 000 руб. за 15 смен и выше).\n• Бесплатное проживание и питание.\n• Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-dixi-4",
+                company: "Дикси",
+                title: "Комплектовщик на склад (РЦ Шушары)",
+                city: "Санкт-Петербург",
+                locationDetails: "г. Санкт-Петербург, пос. Шушары, РЦ Шушары",
+                salary: "от 80 000 руб / 15 смен",
+                numericSalary: 80000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Проживание в СПб", "Питание", "Выплаты 15 и 30 числа", "По ТК РФ"],
+                description: `На распределительный центр «Дикси» в Санкт-Петербурге (РЦ Шушары) требуются комплектовщики.\n\nУсловия работы:\n• Вахта 15/15, график 7/0, смены по 12 часов.\n• Оклад за 1-ю (учебную) вахту: 80 000 руб. (до вычета налога).\n• Выплаты 2 раза в месяц (15 и 30 числа).\n• Со 2-й вахты: оклад 40 000 руб. плюс премия по сделке (в среднем выходит от 80 000 руб. за 15 смен и выше).\n• Бесплатное проживание и hot-питание.\n• Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-dixi-5",
+                company: "Дикси",
+                title: "Водитель эл.погрузчика (штабелера) РЦ Шушары",
+                city: "Санкт-Петербург",
+                locationDetails: "г. Санкт-Петербург, пос. Шушары, РЦ Шушары",
+                salary: "от 90 000 руб / 15 смен",
+                numericSalary: 90000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Водитель",
+                perks: ["Проживание", "Категория В + Отметка", "Выплаты 15 и 30 числа", "По ТК РФ"],
+                description: `На распределительный центр «Дикси» в Санкт-Петербурге (РЦ Шушары) требуется водитель электропогрузчика (штабелера).\n\nТребования к кандидату:\n• Опыт работы на погрузчике / штабелере;\n• Удостоверение тракториста-машиниста кат. «В» с особой отметкой «Водитель погрузчика».\n\nУсловия работы:\n• Вахта 15/15, график 7/0, смены по 12 часов;\n• Оклад за 1-ю вахту: 90 000 руб. (до вычета налога) за 15 смен;\n• Со 2-й вахты: оклад 50 000 руб. плюс премия за перемещения (в среднем выходит от 90 000 руб. за вахту 15 смен и выше);\n• Выплаты 2 раза в месяц (15 и 30 числа);\n• Бесплатное проживание и питание;\n• Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-1",
+                company: "Детский Мир",
+                title: "Комплектовщик на склад",
+                city: "Наро-Фоминск",
+                locationDetails: "г. Наро-Фоминск (д. Бекасово)",
+                salary: "от 4 800 до 7 000+ руб/смена",
+                numericSalary: 7000,
+                shift: "Вахта 15/15",
+                schedule: "График 7/0, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Бесплатное проживание", "2-х разовое питание", "Компенсация дороги до 5000 руб", "ТК РФ"],
+                description: `Принцип работы: Сбор заказов с помощью ТСД (сканера).\nПроживание и 2-х разовое питание за счет компании.\n\nПервая вахта 15 смен (учебная) с окладом 4.800 руб/смена.\nСо 2-й вахты оклад плюс сделка. В среднем от 7.000 руб за смену и выше.\n\nОфициальное трудоустройство по ТК РФ.\nДобираться с регионов своим ходом. Компания компенсирует дорогу до 5000 руб.`,
+                imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-2",
+                company: "Новаролл",
+                title: "Комплектовщик упаковочных материалов",
+                city: "Ногинск",
+                locationDetails: "г. Ногинск",
+                salary: "4 620 руб/смена чистыми",
+                numericSalary: 4620,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 12 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Бесплатное проживание", "Бесплатные обеды", "Официальное ТК РФ"],
+                description: `На склад упаковочных материалов Новаролл требуются комплектовщики.\n\nОбязанности: сбор заказов с помощью ТСД сканера и электро-рохли.\nПроживание и питание (обеды) за счет компании.\nОфициальное трудоустройство по ТК РФ.\nОклад 4.620 руб за смену чистыми.`,
+                imageUrl: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-3",
+                company: "Ceresit",
+                title: "Водитель погрузчика (Кат. С)",
+                city: "Коломна",
+                locationDetails: "г. Коломна, производство строительных смесей",
+                salary: "5 100 руб/смена + обед",
+                numericSalary: 5100,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 12 часов",
+                roleCategory: "Водитель",
+                perks: ["Проживание в Хостеле", "Бесплатный обед", "Погрузчики Jungheinrich"],
+                description: `На производство строительных смесей Ceresit требуются водители погрузчика.\n\nТребования: удостоверение тракториста-машиниста категории С.\nПогрузчики Jungheinrich.\nСмена 5100 руб. + обед на заводе.\nПроживание в Хостеле.`,
+                imageUrl: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-4",
+                company: "Ontex",
+                title: "Комплектовщик предметов гигиены",
+                city: "Ногинск",
+                locationDetails: "г. Ногинск, завод Ontex",
+                salary: "4 500 руб/смена чистыми",
+                numericSalary: 4500,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 11 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Хостел в пешей доступности", "1 раз горячий обед", "Трудоустройство по ТК РФ"],
+                description: `На завод Ontex по производству подгузников и предметов личной гигиены требуются комплектовщики.\n\nСпецифика: Сбор заказов с помощью ТСД (сканера).\nСтоимость смены 4.500 руб чистыми на руки + обед.\nПроживание: хостел в пешей доступности от завода.\nПитание: 1 раз горячий обед.\nОфициальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-5",
+                company: "Ontex",
+                title: "Уборщица / Клининг помещений",
+                city: "Ногинск",
+                locationDetails: "г. Ногинск, завод Ontex",
+                salary: "3 800 руб/смена чистыми",
+                numericSalary: 3800,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 11 часов",
+                roleCategory: "Уборщик",
+                perks: ["Хостел в пешей доступности", "Горячий обед", "Трудоустройство по ТК РФ"],
+                description: `На завод Ontex требуются уборщицы.\n\nОбязанности: уборка офисных, складских и производственных помещений, административных зданий, коридоров, лестниц, санузлов и других мест общего пользования.\n\nСтоимость смены 3800 руб чистыми на руки + обед.\nПроживание: хостел в пешей доступности от завода.`,
+                imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-6",
+                company: "Ontex",
+                title: "Укладчик на конвейер",
+                city: "Ногинск",
+                locationDetails: "г. Ногинск, завод Ontex",
+                salary: "4 400 руб/смена чистыми",
+                numericSalary: 4400,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 11 часов",
+                roleCategory: "Комплектовщик",
+                perks: ["Проживание в общежитии/хостеле", "Горячий обед", "По ТК РФ"],
+                description: `На завод Ontex требуются укладчики.\n\nСпецифика: Работа на конвейерной ленте, нужно будет снимать готовую продукцию и укладывать в короба.\nСтоимость смены 4400 руб чистыми на руки + обед.\nПроживание: хостел в пешей доступности от завода.`,
+                imageUrl: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-7",
+                company: "Henkel",
+                title: "Комплектовщики / Упаковщики / Транспортировщики",
+                city: "Электроугли",
+                locationDetails: "г. Электроугли, Ногинский район, завод Henkel",
+                salary: "от 3 970 до 5 170 руб/смена",
+                numericSalary: 5170,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 11 часов",
+                roleCategory: "Транспортировщик",
+                perks: ["Бесплатное проживание", "Выбор специальности", "Официальное ТК РФ"],
+                description: `На завод по производству шампуней Henkel требуются:\n\n• Комплектовщики (девушки) - 3 970 руб/смена\n• Упаковщики (мужчины) - 4 370 руб/смена\n• Транспортировщик (мужчины с опытом работы на складе) - 5 170 руб/смена\n\nВахта 21/21, график 6/1, смены по 11 часов. Официальное трудоустройство по ТК РФ.`,
+                imageUrl: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-8",
+                company: "Новаролл",
+                title: "Водитель электропогрузчика (Штабелера)",
+                city: "Ногинск",
+                locationDetails: "г. Ногинск, склад Новаролл",
+                salary: "5 720 руб/смена чистыми",
+                numericSalary: 5720,
+                shift: "Вахта от 21 дня",
+                schedule: "График 6/1, смены по 11 часов",
+                roleCategory: "Водитель",
+                perks: ["Проживание & Обеды", "Компенсация проезда до 5000 руб", "Опыт от 1 года"],
+                description: `В связи с открытием нового склада "Новаролл" требуются водители электропогрузчика (Штабелера).\n\nЗП оклад 5.720 руб чистыми на руки за смену.\nТребования: Опыт работы от 1 года, Водительское удостоверение тракториста-машиниста кат. B.\nОбязанности: Перемещение продукции по складу на погрузчике с помощью ТСД.\nПредоставляем проживание, питание (обеды). Компенсируем проезд до 5000 руб.`,
+                imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
+            },
+            {
+                id: "vac-9",
+                company: "Henkel",
+                title: "Водитель погрузчика (г. Новосибирск)",
+                city: "Новосибирск",
+                locationDetails: "г. Новосибирск, производство строительных смесей Henkel",
+                salary: "4 300 руб/смена + обед",
+                numericSalary: 4300,
+                shift: "Вахта 21/21",
+                schedule: "График 6/1, смены по 12 часов",
+                roleCategory: "Водитель",
+                perks: ["Проживание в Хостеле", "Обед на заводе", "Погрузчики Jungheinrich"],
+                description: `На производство строительных смесей Henkel в г. Новосибирск требуются водители погрузчика.\n\nТребования: Удостоверение тракториста-машиниста категории С.\nПогрузчики Jungheinrich.\nСмена 4300 руб. + обед на заводе.\nПроживание в Хостеле.\nВахта 21/21, График 6/1, Смены по 12 часов.`,
+                imageUrl: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=600&auto=format&fit=crop&q=80"
+            }
+        ];
+
+        // Global State Manager
+        let vacancies = [];
+        let applications = [];
+        let isAdminMode = false;
+        let selectedJobForApply = null;
+
+        // Initialize Application
+        window.onload = function() {
+            const storedVacancies = localStorage.getItem("vacancies_data");
+            if (storedVacancies) {
+                try {
+                    const parsed = JSON.parse(storedVacancies);
+                    // Check if Dixy jobs exist, otherwise refresh with initial data
+                    if (!parsed.some(v => v.company === "Дикси")) {
+                        vacancies = INITIAL_VACANCIES;
+                        localStorage.setItem("vacancies_data", JSON.stringify(vacancies));
+                    } else {
+                        vacancies = parsed;
+                    }
+                } catch(e) {
+                    vacancies = INITIAL_VACANCIES;
+                }
+            } else {
+                vacancies = INITIAL_VACANCIES;
+                localStorage.setItem("vacancies_data", JSON.stringify(vacancies));
+            }
+
+            const storedApps = localStorage.getItem("applications_data");
+            if (storedApps) {
+                try {
+                    applications = JSON.parse(storedApps);
+                } catch(e) {
+                    applications = [];
+                }
+            }
+
+            renderVacancies();
+            updateAppCount();
+        };
+
+        function filterVacancies() {
+            renderVacancies();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('cityFilter').value = 'ALL';
+            document.getElementById('roleFilter').value = 'ALL';
+            document.getElementById('sortFilter').value = 'DEFAULT';
+            renderVacancies();
+        }
+
+        function renderVacancies() {
+            const grid = document.getElementById("vacanciesGrid");
+            const emptyState = document.getElementById("emptyState");
+            const searchVal = document.getElementById("searchInput").value.toLowerCase().trim();
+            const cityVal = document.getElementById("cityFilter").value;
+            const roleVal = document.getElementById("roleFilter").value;
+            const sortVal = document.getElementById("sortFilter").value;
+
+            let filtered = vacancies.filter(v => {
+                const matchesSearch = !searchVal || 
+                    v.title.toLowerCase().includes(searchVal) || 
+                    v.company.toLowerCase().includes(searchVal) || 
+                    v.city.toLowerCase().includes(searchVal) ||
+                    v.description.toLowerCase().includes(searchVal);
+
+                const matchesCity = cityVal === 'ALL' || v.city === cityVal;
+                const matchesRole = roleVal === 'ALL' || v.roleCategory === roleVal;
+
+                return matchesSearch && matchesCity && matchesRole;
+            });
+
+            // Sorting
+            if (sortVal === 'PAY_HIGH') {
+                filtered.sort((a, b) => b.numericSalary - a.numericSalary);
+            } else if (sortVal === 'PAY_LOW') {
+                filtered.sort((a, b) => a.numericSalary - b.numericSalary);
+            }
+
+            document.getElementById("vacancyCount").innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = "";
+                emptyState.classList.remove("hidden");
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+
+            grid.innerHTML = filtered.map(job => `
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl overflow-hidden hover:border-brand-500/50 transition duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl group">
+                    <div>
+                        <!-- Header Banner -->
+                        <div class="p-5 border-b border-slate-700/60 bg-gradient-to-br from-slate-800 to-slate-800/50 relative">
+                            <div class="flex items-start justify-between gap-3 mb-2">
+                                <span class="px-2.5 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 font-bold text-xs">
+                                    ${escapeHtml(job.company)}
+                                </span>
+                                <span class="text-xs font-semibold text-slate-400 bg-slate-900/60 px-2.5 py-1 rounded-md">
+                                    <i class="fa-solid fa-location-dot text-rose-400 mr-1"></i>${escapeHtml(job.city)}
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition leading-snug">
+                                ${escapeHtml(job.title)}
+                            </h3>
+                        </div>
+
+                        <!-- Salary & Key info -->
+                        <div class="p-5 space-y-4">
+                            <div class="bg-slate-900/60 border border-slate-700/50 p-3 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Оплата за смену</span>
+                                    <span class="text-lg font-extrabold text-brand-500">${escapeHtml(job.salary)}</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs font-semibold text-slate-300 block">${escapeHtml(job.shift)}</span>
+                                    <span class="text-[11px] text-slate-400 block">${escapeHtml(job.schedule)}</span>
+                                </div>
+                            </div>
+
+                            <!-- Perks badges -->
+                            <div class="flex flex-wrap gap-1.5">
+                                ${job.perks.map(p => `
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600/50 text-slate-300 text-xs">
+                                        <i class="fa-solid fa-check text-brand-500 text-[10px]"></i> ${escapeHtml(p)}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="p-5 pt-0 flex items-center space-x-2">
+                        <button onclick="openJobDetailsModal('${job.id}')" class="flex-1 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold text-xs transition">
+                            Подробнее
+                        </button>
+                        <button onclick="openApplyModal('${job.id}')" class="flex-1 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition shadow-lg shadow-brand-600/20">
+                            Откликнуться
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openJobDetailsModal(id) {
+            const job = vacancies.find(v => v.id === id);
+            if (!job) return;
+
+            document.getElementById("detailCompanyBadge").innerText = job.company;
+            document.getElementById("detailTitle").innerText = job.title;
+            document.getElementById("detailLocation").innerHTML = `<i class="fa-solid fa-location-dot text-rose-400"></i> ${escapeHtml(job.locationDetails || job.city)}`;
+            document.getElementById("detailSalary").innerText = job.salary;
+            document.getElementById("detailShift").innerText = `${job.shift} (${job.schedule})`;
+
+            const perksContainer = document.getElementById("detailPerks");
+            perksContainer.innerHTML = job.perks.map(p => `
+                <div class="p-2 rounded-lg bg-slate-800 border border-slate-700/60 text-slate-300 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-500"></i>
+                    <span>${escapeHtml(p)}</span>
+                </div>
+            `).join('');
+
+            document.getElementById("detailDescription").innerText = job.description;
+
+            const applyBtn = document.getElementById("detailApplyBtn");
+            applyBtn.onclick = function() {
+                closeJobDetailsModal();
+                openApplyModal(job.id);
+            };
+
+            document.getElementById("jobDetailsModal").classList.remove("hidden");
+        }
+
+        function closeJobDetailsModal() {
+            document.getElementById("jobDetailsModal").classList.add("hidden");
+        }
+
+        function openApplyModal(id) {
+            const job = vacancies.find(v => v.id === id);
+            if (!job) return;
+
+            selectedJobForApply = job;
+            document.getElementById("modalJobId").value = job.id;
+            document.getElementById("modalJobTitleInput").value = `${job.company} - ${job.title}`;
+            document.getElementById("applyModalJobTitle").innerText = `${job.company} — ${job.title} (${job.city})`;
+
+            const phoneInput = document.getElementById("candidatePhone");
+            phoneInput.value = "+7 ";
+
+            document.getElementById("applyModal").classList.remove("hidden");
+        }
+
+        function handlePhoneFocus(input) {
+            if (!input.value || input.value.trim() === '') {
+                input.value = '+7 ';
+            }
+        }
+
+        function handlePhoneBlur(input) {
+            if (input.value === '+7 ' || input.value === '+7') {
+                input.value = '';
+            }
+        }
+
+        function handlePhoneInput(input) {
+            let digits = input.value.replace(/\D/g, '');
+            if (digits.startsWith('7') || digits.startsWith('8')) {
+                digits = digits.substring(1);
+            }
+            digits = digits.substring(0, 10);
+
+            let formatted = '+7 ';
+            if (digits.length > 0) {
+                formatted += '(' + digits.substring(0, 3);
+            }
+            if (digits.length >= 3) {
+                formatted += ') ' + digits.substring(3, 6);
+            }
+            if (digits.length >= 6) {
+                formatted += '-' + digits.substring(6, 8);
+            }
+            if (digits.length >= 8) {
+                formatted += '-' + digits.substring(8, 10);
+            }
+
+            input.value = digits.length === 0 ? '+7 ' : formatted;
+        }
+
+        function closeApplyModal() {
+            document.getElementById("applyModal").classList.add("hidden");
+            document.getElementById("applyForm").reset();
+            selectedJobForApply = null;
+        }
+
+        // Submit Application
+        function handleApplySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById("candidateName").value.trim();
+            const phone = document.getElementById("candidatePhone").value.trim();
+            const comment = document.getElementById("candidateComment").value.trim();
+            const jobId = document.getElementById("modalJobId").value;
+            const jobTitle = document.getElementById("modalJobTitleInput").value;
+
+            if (!name || !phone) {
+                showToast("Заполните ФИО и Телефон", "error");
+                return;
+            }
+
+            const newApp = {
+                id: "app-" + Date.now(),
+                date: new Date().toLocaleString("ru-RU"),
+                name: name,
+                phone: phone,
+                jobTitle: jobTitle,
+                comment: comment || "—"
+            };
+
+            applications.unshift(newApp);
+            localStorage.setItem("applications_data", JSON.stringify(applications));
+            updateAppCount();
+
+            closeApplyModal();
+            showToast("Ваш отклик успешно отправлен! Менеджер свяжется с вами.", "success");
+        }
+
+        function sendViaWhatsAppDirect() {
+            const name = document.getElementById("candidateName").value.trim();
+            const phone = document.getElementById("candidatePhone").value.trim();
+            const jobTitle = document.getElementById("modalJobTitleInput").value;
+
+            let text = `Здравствуйте! Я хочу откликнуться на вакансию: *${jobTitle}*.\n\n`;
+            if (name) text += `Мое ФИО: ${name}\n`;
+            if (phone) text += `Мой телефон: ${phone}\n`;
+
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/79605076620?text=${encoded}`, '_blank');
+        }
+
+        function toggleAdminPanel() {
+            isAdminMode = !isAdminMode;
+            const candidateView = document.getElementById("candidateView");
+            const adminView = document.getElementById("adminView");
+            const btnText = document.getElementById("adminBtnText");
+
+            if (isAdminMode) {
+                candidateView.classList.add("hidden");
+                adminView.classList.remove("hidden");
+                btnText.innerText = "Вернуться на сайт";
+                renderAdminApplications();
+                renderAdminJobs();
+            } else {
+                candidateView.classList.remove("hidden");
+                adminView.classList.add("hidden");
+                btnText.innerText = "Панель Управления";
+            }
+        }
+
+        function switchAdminTab(tab) {
+            const appSec = document.getElementById("adminApplicationsSection");
+            const jobSec = document.getElementById("adminManageJobsSection");
+            const tabApp = document.getElementById("adminTabApplications");
+            const tabJob = document.getElementById("adminTabManage");
+
+            if (tab === 'applications') {
+                appSec.classList.remove("hidden");
+                jobSec.classList.add("hidden");
+                tabApp.className = "pb-3 text-sm font-bold border-b-2 border-brand-500 text-brand-500 transition";
+                tabJob.className = "pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition";
+            } else {
+                appSec.classList.add("hidden");
+                jobSec.classList.remove("hidden");
+                tabJob.className = "pb-3 text-sm font-bold border-b-2 border-brand-500 text-brand-500 transition";
+                tabApp.className = "pb-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition";
+            }
+        }
+
+        function updateAppCount() {
+            document.getElementById("appCount").innerText = applications.length;
+            document.getElementById("adminJobCount").innerText = vacancies.length;
+        }
+
+        function renderAdminApplications() {
+            const tbody = document.getElementById("applicationsTableBody");
+            const empty = document.getElementById("emptyApplications");
+
+            if (applications.length === 0) {
+                tbody.innerHTML = "";
+                empty.classList.remove("hidden");
+                return;
+            }
+
+            empty.classList.add("hidden");
+            tbody.innerHTML = applications.map(app => `
+                <tr class="hover:bg-slate-700/30 transition">
+                    <td class="p-4 text-xs text-slate-400 whitespace-nowrap">${escapeHtml(app.date)}</td>
+                    <td class="p-4 font-bold text-white">${escapeHtml(app.name)}</td>
+                    <td class="p-4 text-brand-400 font-bold whitespace-nowrap">
+                        <a href="tel:${escapeHtml(app.phone)}" class="hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone text-xs"></i> ${escapeHtml(app.phone)}
+                        </a>
+                    </td>
+                    <td class="p-4 text-xs text-slate-300">${escapeHtml(app.jobTitle)}</td>
+                    <td class="p-4 text-xs text-slate-400 max-w-xs truncate">${escapeHtml(app.comment)}</td>
+                    <td class="p-4 text-right">
+                        <button onclick="deleteApplication('${app.id}')" class="text-xs px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition">
+                            <i class="fa-solid fa-trash-can mr-1"></i> Удалить
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function deleteApplication(id) {
+            if (confirm("Удалить этот отклик?")) {
+                applications = applications.filter(a => a.id !== id);
+                localStorage.setItem("applications_data", JSON.stringify(applications));
+                updateAppCount();
+                renderAdminApplications();
+                showToast("Отклик удален", "info");
+            }
+        }
+
+        function renderAdminJobs() {
+            const container = document.getElementById("adminJobsContainer");
+            container.innerHTML = vacancies.map(job => `
+                <div class="bg-slate-800 border border-slate-700 p-4 rounded-xl flex items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs font-bold text-brand-400">${escapeHtml(job.company)}</span>
+                            <span class="text-xs text-slate-500">•</span>
+                            <span class="text-xs text-slate-400">${escapeHtml(job.city)}</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mt-0.5">${escapeHtml(job.title)}</h4>
+                        <p class="text-xs text-slate-400 mt-1">${escapeHtml(job.salary)} | ${escapeHtml(job.shift)}</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="editAdminJob('${job.id}')" class="px-3 py-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold">
+                            <i class="fa-solid fa-pen mr-1"></i> Ред.
+                        </button>
+                        <button onclick="deleteAdminJob('${job.id}')" class="px-3 py-1.5 rounded bg-rose-600/20 text-rose-400 hover:bg-rose-600 hover:text-white text-xs font-semibold transition">
+                            <i class="fa-solid fa-trash mr-1"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openAddVacancyModal() {
+            document.getElementById("adminJobForm").reset();
+            document.getElementById("adminJobId").value = "";
+            document.getElementById("adminJobModalTitle").innerText = "Добавить вакансию";
+            document.getElementById("adminJobModal").classList.remove("hidden");
+        }
+
+        function editAdminJob(id) {
+            const job = vacancies.find(v => v.id === id);
+            if (!job) return;
+
+            document.getElementById("adminJobId").value = job.id;
+            document.getElementById("adminJobCompany").value = job.company;
+            document.getElementById("adminJobTitle").value = job.title;
+            document.getElementById("adminJobCity").value = job.city;
+            document.getElementById("adminJobSalary").value = job.salary;
+            document.getElementById("adminJobShift").value = job.shift;
+            document.getElementById("adminJobSchedule").value = job.schedule;
+            document.getElementById("adminJobDescription").value = job.description;
+
+            document.getElementById("adminJobModalTitle").innerText = "Редактировать вакансию";
+            document.getElementById("adminJobModal").classList.remove("hidden");
+        }
+
+        function closeAdminJobModal() {
+            document.getElementById("adminJobModal").classList.add("hidden");
+        }
+
+        function handleSaveAdminJob(e) {
+            e.preventDefault();
+            const id = document.getElementById("adminJobId").value;
+            const company = document.getElementById("adminJobCompany").value.trim();
+            const title = document.getElementById("adminJobTitle").value.trim();
+            const city = document.getElementById("adminJobCity").value.trim();
+            const salary = document.getElementById("adminJobSalary").value.trim();
+            const shift = document.getElementById("adminJobShift").value.trim() || "Вахта 21/21";
+            const schedule = document.getElementById("adminJobSchedule").value.trim() || "График 6/1";
+            const description = document.getElementById("adminJobDescription").value.trim();
+
+            if (id) {
+                // Update
+                const idx = vacancies.findIndex(v => v.id === id);
+                if (idx !== -1) {
+                    vacancies[idx] = {
+                        ...vacancies[idx],
+                        company, title, city, salary, shift, schedule, description
+                    };
+                }
+            } else {
+                // Create
+                const newJob = {
+                    id: "vac-" + Date.now(),
+                    company, title, city,
+                    locationDetails: `г. ${city}`,
+                    salary,
+                    numericSalary: parseInt(salary.replace(/\D/g, '')) || 4000,
+                    shift, schedule,
+                    roleCategory: title.includes("Водитель") ? "Водитель" : "Комплектовщик",
+                    perks: ["Бесплатное проживание", "Питание", "Трудоустройство по ТК РФ"],
+                    description,
+                    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
+                };
+                vacancies.unshift(newJob);
+            }
+
+            localStorage.setItem("vacancies_data", JSON.stringify(vacancies));
+            closeAdminJobModal();
+            renderVacancies();
+            renderAdminJobs();
+            updateAppCount();
+            showToast("Вакансия сохранена", "success");
+        }
+
+        function deleteAdminJob(id) {
+            if (confirm("Удалить эту вакансию из каталога?")) {
+                vacancies = vacancies.filter(v => v.id !== id);
+                localStorage.setItem("vacancies_data", JSON.stringify(vacancies));
+                renderVacancies();
+                renderAdminJobs();
+                updateAppCount();
+                showToast("Вакансия удалена", "info");
+            }
+        }
+
+        // Export Applications to CSV
+        function exportApplicationsToCSV() {
+            if (applications.length === 0) {
+                showToast("Нет откликов для экспорта", "error");
+                return;
+            }
+
+            let csv = "Дата;ФИО;Телефон;Вакансия;Комментарий\n";
+            applications.forEach(a => {
+                csv += `"${a.date}";"${a.name}";"${a.phone}";"${a.jobTitle}";"${a.comment.replace(/"/g, '""')}"\n`;
+            });
+
+            const blob = new Blob(["\ufeff" + csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `Отклики_Кандидатов_${new Date().toISOString().slice(0,10)}.csv`;
+            a.click();
+        }
+
+        function showToast(msg, type = "success") {
+            const toast = document.getElementById("toast");
+            const toastMsg = document.getElementById("toastMessage");
+            const toastIcon = document.getElementById("toastIcon");
+
+            toastMsg.innerText = msg;
+
+            if (type === "success") {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-xl";
+            } else if (type === "error") {
+                toastIcon.className = "fa-solid fa-circle-xmark text-rose-400 text-xl";
+            } else {
+                toastIcon.className = "fa-solid fa-circle-info text-blue-400 text-xl";
+            }
+
+            toast.classList.remove("translate-y-20", "opacity-0");
+            toast.classList.add("translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+                toast.classList.remove("translate-y-0", "opacity-100");
+                toast.classList.add("translate-y-20", "opacity-0");
+            }, 3500);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return "";
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
